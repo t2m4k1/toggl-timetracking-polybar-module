@@ -1,7 +1,6 @@
 <img src="https://cloud.tmk241.tk/s/Xx2gKMTqLncNX6A/preview" alt="https://cloud.tmk241.tk/s/Xx2gKMTqLncNX6A/preview" class="overflowingHorizontalOnly">
 
 Description:
-
 Shows all unique time-entry names of the last seven days in your polybar.
 Clicking on them will start a new time entry with the given description name.
 A running time entry is indicated by text highlighted in green (see screenshot).
@@ -11,6 +10,9 @@ Since this plugin is querying the toggl-API, keep in mind that the plugin takes 
 Installation:
 Install npm and nodejs
 Switch to cloned folder and run "npm install"
+
+Disclaimer:
+Since I've created this plugin mostly for myself, it's code might be a little clunky :)
 
 Adding module to polybar config:
 
