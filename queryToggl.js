@@ -90,21 +90,6 @@ function getUniqueTimeEntryNames(daysTillNow, processingFnc){
     }, daysTillNow
     );
 }
-/*
-function getRunningTimeEntry(data, processingFnc){
-    var BreakException = {};
-    try{
-        data.forEach(function (timeEntry) {
-            if (typeof timeEntry.stop === 'undefined'){
-                processingFnc(timeEntry);
-                throw BreakException;
-            }
-        });
-    }
-    catch (e) {
-      if (e !== BreakException) throw e;
-    }
-}*/
 
 function timeEntryIsRunning(timeEntry){
     return (typeof timeEntry !== undefined && typeof timeEntry.stop === "undefined");
@@ -179,4 +164,3 @@ if (args.length == 4){
 
 
 getUniqueTimeEntryNames(7, formatUniqueTimeEntryNames);
-//startTimeEntry('UFS')
