@@ -1,3 +1,5 @@
+[!alt text](https://cloud.tmk241.tk/s/Xx2gKMTqLncNX6A/preview)
+file:///home/tmk241/Downloads/polybar.jpg
 Installation:
 Install npm and nodejs
 Switch to cloned folder and run "npm install"
