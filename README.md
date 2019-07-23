@@ -12,7 +12,7 @@ Install npm and nodejs
 Switch to cloned folder and run "npm install"
 
 Disclaimer:
-Since I've created this plugin mostly for myself, it's code might be a little clunky :)
+Since I've created this plugin mostly for myself, its code might be a little clunky :)
 
 Adding module to polybar config:
 
