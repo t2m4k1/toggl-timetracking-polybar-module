@@ -1,10 +1,11 @@
 const fs = require('fs');
-let rawdata = fs.readFileSync('token.json');
-let tokenInput = JSON.parse(rawdata);
 const axios = require("axios");
 var args = process.argv;
 var nodeJSpath = args[0];
 var scriptPath = args[1];
+var tokenFile = scriptPath.replace('queryToggl.js', 'token.json')
+let rawdata = fs.readFileSync(tokenFile);
+let tokenInput = JSON.parse(rawdata);
 
 //Username and password are combined into a string username:password
 //or if you use the api token it should be combined xxxx:api_token
