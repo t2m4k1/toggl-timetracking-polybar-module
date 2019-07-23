@@ -1,13 +1,8 @@
-#Installation:
-
-
+Installation:
 Install npm and nodejs
-
-
 Switch to cloned folder and run "npm install"
 
-#Adding module to polybar config:
-
+Adding module to polybar config:
 
     [module/toggl]
     type = custom/script
