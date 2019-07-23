@@ -10,6 +10,9 @@ Since this plugin is querying the toggl-API, keep in mind that the plugin takes 
 Installation:
 Install npm and nodejs
 Switch to cloned folder and run "npm install"
+Copy token.json.example to token.json
+Edit the new token.json file according to the instructions in it
+Find your API-Key at the bottom of your toggl profile page https://toggl.com/app/profile
 
 Disclaimer:
 Since I've created this plugin mostly for myself, its code might be a little clunky :)
