@@ -10,6 +10,7 @@ Since this plugin is querying the toggl-API, keep in mind that the plugin takes 
 # Installation
 * Install npm and nodejs
 * Switch to cloned folder and run "npm install"
+* Use toggl-website to start a new time-entry, if you currently have none. Remember to give it a name (e.g. "Masterarbeit" in Screenshot)
 * Copy token.json.example to token.json
 * Edit the new token.json file according to the instructions in it
 * Find your API-Key at the bottom of your toggl profile page https://toggl.com/app/profile
