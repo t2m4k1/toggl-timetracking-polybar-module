@@ -3,6 +3,9 @@ const axios = require("axios");
 var args = process.argv;
 var nodeJSpath = args[0];
 var scriptPath = args[1];
+var scriptName = scriptPath.split("/");
+scriptName = scriptName[scriptName.length-1];
+var curFolder = scriptPath.replace(scriptName, "");
 var tokenFile = scriptPath.replace('queryToggl.js', 'token.json')
 let rawdata = fs.readFileSync(tokenFile);
 let tokenInput = JSON.parse(rawdata);
@@ -19,29 +22,22 @@ var token = tokenInput['token']+':api_token'
 token = 'Basic '+Buffer.from(token).toString('base64')
 var options = {
     headers: {
-  }
+    }
 };
 
 function queryApi(url, processingFnc, method = 'get', data=null){
-  var instance = axios({
-    method: method,
-    url: url,
-    timeout: 1000,
-    params: { with_related_data: true},
-    data: data,
-    headers: {
-      'Authorization': token
-    }
-  }).then(function (response) {
-    //console.log(processingFnc)
-    processingFnc(response.data);
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
-  .then(function () {
-    // always executed
-  });
+    var instance = axios({
+        method: method,
+        url: url,
+        timeout: 1000,
+        params: { with_related_data: true},
+        data: data,
+        headers: {
+            'Authorization': token
+        }
+    }).then((response) => {
+        processingFnc(response.data);
+    })
 };
 
 function getToday(){
@@ -69,14 +65,13 @@ function getUnique(data,key){
     var unique = {};
     var distinct = [];
     data.forEach(function (x) {
-    if (!unique[x[key]]) {
-        distinct.push(x[key]);
-        unique[x[key]] = true;
-    }
+        if (!unique[x[key]]) {
+            distinct.push(x[key]);
+            unique[x[key]] = true;
+        }
     });
     return distinct;
 }
-
 
 function getTimeEntries(processingFnc, daysTillNow){
     var date1="2019-03-15T15:08:14+02:00"
@@ -147,8 +142,6 @@ function formatUniqueTimeEntryNames(input){
     },4);
 }
 
-
-
 if (args.length == 4){
     console.log(args[2])
     var stop = args[2].match("^stop$");
@@ -162,5 +155,12 @@ if (args.length == 4){
     }
 };
 
+try{
+    getUniqueTimeEntryNames(7, formatUniqueTimeEntryNames);
+}
+catch(e){
+    fs.appendFile(curFolder+"errors.log", e, (err) =>  {
+        if (err) throw err;
+    })
 
-getUniqueTimeEntryNames(7, formatUniqueTimeEntryNames);
+}
