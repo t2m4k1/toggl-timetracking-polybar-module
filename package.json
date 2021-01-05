@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/t2m4k1/toggl-timetracking-polybar-module#readme",
   "dependencies": {
-    "axios": "^0.19.0"
+    "axios": "^0.21.1"
   }
 }
